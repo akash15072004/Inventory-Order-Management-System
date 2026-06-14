@@ -17,11 +17,16 @@ from app.models.user import User
 
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="Inventory Management API")
+app = FastAPI(
+    title="Inventory Management API"
+)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://inventory-order-management-system-gold.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -33,6 +38,10 @@ app.include_router(order_router)
 app.include_router(dashboard_router)
 app.include_router(auth_router)
 
+
 @app.get("/")
 def root():
-    return {"status": "running"}
+    return {
+        "status": "running",
+        "message": "Inventory Management API Running Successfully"
+    }
