@@ -34,19 +34,22 @@ function ProtectedRoute({
 }
 
 function App() {
-  const userData =
-    localStorage.getItem("user");
+ const [user, setUser] =
+  useState(() => {
+    const userData =
+      localStorage.getItem("user");
 
-  let user = null;
-
-  try {
-    user = userData
-      ? JSON.parse(userData)
-      : null;
-  } catch {
-    localStorage.removeItem("user");
-  }
-
+    try {
+      return userData
+        ? JSON.parse(userData)
+        : null;
+    } catch {
+      localStorage.removeItem(
+        "user"
+      );
+      return null;
+    }
+  });
   const [theme, setTheme] =
     useState(
       localStorage.getItem(
@@ -68,13 +71,15 @@ function App() {
   }, [theme]);
 
   const logout = () => {
-    localStorage.removeItem(
-      "user"
-    );
+  localStorage.removeItem(
+    "user"
+  );
 
-    window.location.href =
-      "/login";
-  };
+  setUser(null);
+
+  window.location.href =
+    "/login";
+};
 
   return (
     <BrowserRouter>

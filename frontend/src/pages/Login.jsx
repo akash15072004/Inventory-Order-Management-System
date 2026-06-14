@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import api from "../services/api";
 
 function Login() {
-  const navigate = useNavigate();
-
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -29,7 +27,7 @@ function Login() {
         JSON.stringify(res.data)
       );
 
-      navigate("/");
+      window.location.href = "/";
     } catch (err) {
       alert(
         err.response?.data?.detail ||
