@@ -10,6 +10,7 @@ router = APIRouter(
     tags=["Customers"]
 )
 
+
 @router.post("/", response_model=CustomerResponse)
 def create_customer(
     customer: CustomerCreate,
@@ -59,6 +60,32 @@ def get_customer(
             status_code=404,
             detail="Customer not found"
         )
+
+    return customer
+
+
+@router.put("/{customer_id}", response_model=CustomerResponse)
+def update_customer(
+    customer_id: int,
+    payload: CustomerCreate,
+    db: Session = Depends(get_db)
+):
+    customer = db.query(Customer).filter(
+        Customer.id == customer_id
+    ).first()
+
+    if not customer:
+        raise HTTPException(
+            status_code=404,
+            detail="Customer not found"
+        )
+
+    customer.full_name = payload.full_name
+    customer.email = payload.email
+    customer.phone = payload.phone
+
+    db.commit()
+    db.refresh(customer)
 
     return customer
 
