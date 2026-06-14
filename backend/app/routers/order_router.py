@@ -87,7 +87,59 @@ def create_order(
 def get_orders(
     db: Session = Depends(get_db)
 ):
-    return db.query(Order).all()
+    orders = db.query(Order).all()
+
+    result = []
+
+    for order in orders:
+
+        order_items = []
+
+        for item in order.items:
+
+            product = (
+                db.query(Product)
+                .filter(
+                    Product.id == item.product_id
+                )
+                .first()
+            )
+
+            order_items.append(
+                {
+                    "product_name":
+                        product.name
+                        if product
+                        else "Unknown",
+
+                    "quantity":
+                        item.quantity,
+
+                    "unit_price":
+                        item.unit_price,
+
+                    "amount":
+                        item.quantity
+                        * item.unit_price,
+                }
+            )
+
+        result.append(
+            {
+                "id": order.id,
+
+                "customer_id":
+                    order.customer_id,
+
+                "total_amount":
+                    order.total_amount,
+
+                "items":
+                    order_items,
+            }
+        )
+
+    return result
 
 
 @router.get("/{order_id}")
@@ -105,7 +157,43 @@ def get_order(
             detail="Order not found"
         )
 
-    return order
+    order_items = []
+
+    for item in order.items:
+
+        product = (
+            db.query(Product)
+            .filter(
+                Product.id == item.product_id
+            )
+            .first()
+        )
+
+        order_items.append(
+            {
+                "product_name":
+                    product.name
+                    if product
+                    else "Unknown",
+
+                "quantity":
+                    item.quantity,
+
+                "unit_price":
+                    item.unit_price,
+
+                "amount":
+                    item.quantity
+                    * item.unit_price,
+            }
+        )
+
+    return {
+        "id": order.id,
+        "customer_id": order.customer_id,
+        "total_amount": order.total_amount,
+        "items": order_items,
+    }
 
 
 @router.delete("/{order_id}")
