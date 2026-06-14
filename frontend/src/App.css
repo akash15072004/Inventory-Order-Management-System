@@ -709,3 +709,139 @@ body.cyber .page-title {
 .revenue-card p {
   color: white;
 }
+
+/* =========================
+   MOBILE RESPONSIVE FIX
+========================= */
+
+@media screen and (max-width: 768px) {
+
+  .app {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .sidebar.collapsed {
+    width: 100%;
+  }
+
+  .main-content,
+  .main-content.collapsed {
+    margin-left: 0 !important;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .page-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .card h2 {
+    font-size: 36px;
+  }
+
+  .profile-box {
+    width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    text-align: center;
+  }
+
+  .sidebar h2 {
+    font-size: 24px;
+  }
+
+  .sidebar a {
+    text-align: center;
+    display: block;
+  }
+
+  .sidebar select,
+  .sidebar button,
+  .logout-btn {
+    width: 100%;
+  }
+
+  .toggle-btn {
+    width: 100%;
+  }
+
+  .analytics-card {
+    overflow-x: auto;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .auth-card {
+    width: 95%;
+    padding: 25px;
+  }
+
+  .auth-title {
+    font-size: 32px;
+  }
+
+  .auth-logo {
+    font-size: 50px;
+  }
+}
+
+/* SMALL PHONES */
+
+@media screen and (max-width: 480px) {
+
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .card h2 {
+    font-size: 32px;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+
+  .profile-box h3 {
+    font-size: 18px;
+  }
+
+  .profile-box p {
+    font-size: 15px;
+  }
+
+  .sidebar {
+    padding: 10px;
+  }
+
+  .main-content {
+    padding: 10px;
+  }
+}
