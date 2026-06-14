@@ -1,67 +1,125 @@
 # 📦 Inventory & Order Management System
 
-A full-stack Inventory & Order Management System built using React, FastAPI, PostgreSQL, Docker, Railway, and Vercel.
+A production-ready full-stack Inventory & Order Management System designed to streamline inventory operations, customer management, and order processing for businesses.
+
+Built with a modern React frontend, FastAPI backend, PostgreSQL/SQLite database support, and containerized deployment using Docker. The application provides real-time inventory tracking, analytics, reporting, authentication, and a professional admin dashboard.
+
+---
 
 ## 🚀 Live Demo
 
-### Frontend
+### Frontend (Vercel)
+
 https://inventory-order-management-system-gold.vercel.app
 
-### Backend API
+### Backend API (Railway)
+
 https://inventory-order-management-system-production-458d.up.railway.app
 
-### API Documentation
+### API Documentation (Swagger)
+
 https://inventory-order-management-system-production-458d.up.railway.app/docs
 
 ---
 
-## 📋 Features
+## 📋 Project Overview
 
-### Authentication
-- User Signup
+The Inventory & Order Management System enables businesses to efficiently manage:
+
+- Product Inventory
+- Customer Records
+- Order Processing
+- Inventory Tracking
+- Business Analytics
+- Reporting & Exporting
+
+The system automatically updates stock levels when orders are created and provides insights through an analytics dashboard.
+
+---
+
+## ✨ Key Features
+
+### 🔐 Authentication & Authorization
+
+- User Registration
 - User Login
 - Session Management
+- Protected Routes
 
-### Product Management
-- Add Products
+### 📦 Product Management
+
+- Create Products
 - Update Products
 - Delete Products
 - Inventory Tracking
+- Product Search
 
-### Customer Management
-- Add Customers
+### 👥 Customer Management
+
+- Create Customers
 - Update Customers
 - Delete Customers
+- Customer Search
 
-### Order Management
+### 🛒 Order Management
+
 - Create Orders
 - Delete Orders
-- Automatic Stock Update
-- Order Total Calculation
+- Automatic Stock Deduction
+- Order Validation
+- Order Tracking
 
-### Dashboard
+### 📊 Analytics Dashboard
+
 - Total Products
 - Total Customers
 - Total Orders
 - Low Stock Alerts
 - Recent Orders
-- Analytics Charts
+- Business Analytics Charts
 
-### Reports
+### 📑 Reporting
+
 - Export Orders to CSV
-- Generate PDF Invoice
+- Generate PDF Reports
+- Download Business Records
 
-### UI Features
+### 🎨 User Experience
+
+- Professional Admin Dashboard
+- Multiple Theme Support
 - Responsive Design
-- Dark Theme
-- Multiple Theme Options
-- Professional Dashboard
+- Mobile Friendly Interface
+- Interactive Charts
 
 ---
 
-## 🛠️ Tech Stack
+## 🏗️ System Architecture
+
+```text
+┌────────────────────────────┐
+│       React Frontend       │
+│         (Vercel)           │
+└─────────────┬──────────────┘
+              │
+              ▼
+┌────────────────────────────┐
+│      FastAPI Backend       │
+│         (Railway)          │
+└─────────────┬──────────────┘
+              │
+              ▼
+┌────────────────────────────┐
+│ PostgreSQL / SQLite DB     │
+└────────────────────────────┘
+```
+
+---
+
+## 🛠️ Technology Stack
 
 ### Frontend
+
 - React.js
 - React Router DOM
 - Axios
@@ -70,16 +128,19 @@ https://inventory-order-management-system-production-458d.up.railway.app/docs
 - File Saver
 
 ### Backend
+
 - FastAPI
 - SQLAlchemy
 - Pydantic
 - Uvicorn
 
 ### Database
-- PostgreSQL
-- SQLite (Fallback)
 
-### DevOps
+- PostgreSQL
+- SQLite
+
+### DevOps & Deployment
+
 - Docker
 - Docker Compose
 - Railway
@@ -94,32 +155,66 @@ https://inventory-order-management-system-production-458d.up.railway.app/docs
 Inventory-Order-Management-System
 │
 ├── backend
+│   │
 │   ├── app
+│   │   │
 │   │   ├── models
+│   │   │   ├── customer.py
+│   │   │   ├── product.py
+│   │   │   ├── order.py
+│   │   │   ├── order_item.py
+│   │   │   └── user.py
+│   │   │
 │   │   ├── routers
+│   │   │   ├── auth_router.py
+│   │   │   ├── customer_router.py
+│   │   │   ├── dashboard_router.py
+│   │   │   ├── order_router.py
+│   │   │   └── product_router.py
+│   │   │
 │   │   ├── schemas
+│   │   │   ├── customer.py
+│   │   │   ├── product.py
+│   │   │   ├── order.py
+│   │   │   └── user.py
+│   │   │
 │   │   ├── database.py
 │   │   └── main.py
 │   │
+│   ├── requirements.txt
 │   ├── Dockerfile
-│   └── requirements.txt
+│   └── .env.example
 │
 ├── frontend
-│   ├── src
-│   │   ├── pages
-│   │   ├── services
-│   │   └── App.jsx
 │   │
-│   ├── Dockerfile
-│   └── package.json
+│   ├── src
+│   │   │
+│   │   ├── pages
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Products.jsx
+│   │   │   ├── Customers.jsx
+│   │   │   ├── Orders.jsx
+│   │   │   ├── Login.jsx
+│   │   │   └── Signup.jsx
+│   │   │
+│   │   ├── services
+│   │   │   └── api.js
+│   │   │
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   └── main.jsx
+│   │
+│   ├── package.json
+│   └── Dockerfile
 │
 ├── docker-compose.yml
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
 ---
 
-## ⚙️ Installation
+## ⚙️ Local Setup
 
 ### Clone Repository
 
@@ -139,6 +234,20 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
+Backend:
+
+```text
+http://localhost:8000
+```
+
+Swagger Docs:
+
+```text
+http://localhost:8000/docs
+```
+
+---
+
 ### Frontend Setup
 
 ```bash
@@ -149,11 +258,17 @@ npm install
 npm run dev
 ```
 
+Frontend:
+
+```text
+http://localhost:5173
+```
+
 ---
 
 ## 🐳 Docker Setup
 
-### Build and Run
+### Build & Run Containers
 
 ```bash
 docker compose up --build
@@ -210,14 +325,40 @@ GET /dashboard
 
 ---
 
-## 🎯 Future Improvements
+## 📸 Screenshots
+
+Add screenshots of:
+
+- Login Page
+- Signup Page
+- Dashboard
+- Products Module
+- Customers Module
+- Orders Module
+
+Example:
+
+```text
+screenshots/
+├── login.png
+├── signup.png
+├── dashboard.png
+├── products.png
+├── customers.png
+└── orders.png
+```
+
+---
+
+## 📈 Future Enhancements
 
 - JWT Authentication
 - Role-Based Access Control
 - Email Notifications
 - Sales Analytics
 - Inventory Alerts
-- Order Status Tracking
+- Advanced Reporting
+- Multi-User Support
 - Cloud Database Integration
 
 ---
@@ -228,11 +369,27 @@ GET /dashboard
 
 B.Tech Information Technology
 
-GitHub:
-https://github.com/akash15072004
+GitHub: https://github.com/akash15072004
 
 ---
 
 ## 📄 License
 
-This project is developed for educational and assessment purposes.
+This project is developed for educational, learning, and technical assessment purposes.
+
+---
+
+## ✅ Assignment Requirements Covered
+
+- React Frontend
+- FastAPI Backend
+- PostgreSQL Database Support
+- Docker Containerization
+- Docker Compose Setup
+- Authentication System
+- CRUD Operations
+- Inventory Tracking
+- Analytics Dashboard
+- Reporting Features
+- Cloud Deployment
+- Production Ready Architecture
