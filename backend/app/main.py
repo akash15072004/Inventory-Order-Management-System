@@ -32,7 +32,11 @@ app.add_middleware(
         "http://127.0.0.1:5174",
         "http://127.0.0.1:5175",
         "http://127.0.0.1:5176",
-        "https://inventory-order-management-system-gold.vercel.app"
+        "https://inventory-order-management-system-gold.vercel.app",
+        "https://inventory-order-management-system-akash-chaudhary.vercel.app",
+        "https://inventory-order-management-system-git-main-akash-chaudhary.vercel.app",
+        "https://inventory-order-management-system-km893h8an-akash-chaudhary.vercel.app",
+        
     ],
     allow_credentials=True,
     allow_methods=["*"],
