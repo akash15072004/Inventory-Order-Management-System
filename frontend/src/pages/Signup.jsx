@@ -11,8 +11,7 @@ function Signup() {
     password: "",
   });
 
-  const [loading, setLoading] =
-    useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,10 +19,12 @@ function Signup() {
     setLoading(true);
 
     try {
-      await api.post(
+      const res = await api.post(
         "/auth/signup",
         form
       );
+
+      console.log("SUCCESS =", res.data);
 
       alert(
         "Account Created Successfully"
@@ -31,9 +32,16 @@ function Signup() {
 
       navigate("/login");
     } catch (err) {
+      console.log("ERROR =", err);
+      console.log("RESPONSE =", err.response);
+      console.log("DATA =", err.response?.data);
+
       alert(
-        err.response?.data?.detail ||
+        JSON.stringify(
+          err.response?.data ||
+          err.message ||
           "Signup Failed"
+        )
       );
     } finally {
       setLoading(false);
@@ -73,8 +81,7 @@ function Signup() {
             onChange={(e) =>
               setForm({
                 ...form,
-                username:
-                  e.target.value,
+                username: e.target.value,
               })
             }
             required
@@ -87,8 +94,7 @@ function Signup() {
             onChange={(e) =>
               setForm({
                 ...form,
-                email:
-                  e.target.value,
+                email: e.target.value,
               })
             }
             required
@@ -101,8 +107,7 @@ function Signup() {
             onChange={(e) =>
               setForm({
                 ...form,
-                password:
-                  e.target.value,
+                password: e.target.value,
               })
             }
             required

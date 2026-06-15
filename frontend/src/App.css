@@ -714,18 +714,13 @@ body.cyber .page-title {
    MOBILE RESPONSIVE FIX
 ========================= */
 
-@media screen and (max-width: 768px) {
 
-  .app {
-    display: flex;
-    flex-direction: column;
-  }
+@media (max-width: 768px) {
 
   .sidebar {
     position: relative;
     width: 100%;
     height: auto;
-    min-height: auto;
     padding: 15px;
   }
 
@@ -735,14 +730,21 @@ body.cyber .page-title {
 
   .main-content,
   .main-content.collapsed {
-    margin-left: 0 !important;
-    width: 100%;
+    margin-left: 0;
     padding: 15px;
   }
 
-  .page-title {
-    font-size: 2rem;
-    text-align: center;
+  .profile-box {
+    font-size: 14px;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    padding: 15px;
+  }
+
+  table {
+    min-width: 700px;
   }
 
   .card-container {
@@ -751,48 +753,25 @@ body.cyber .page-title {
   }
 
   .card {
-    width: 100%;
     padding: 20px;
   }
 
-  .card h2 {
-    font-size: 36px;
-  }
-
-  .profile-box {
-    width: 100%;
-    overflow-wrap: break-word;
-    word-break: break-word;
-    text-align: center;
-  }
-
-  .sidebar h2 {
+  .page-title {
     font-size: 24px;
   }
 
-  .sidebar a {
-    text-align: center;
-    display: block;
+  form {
+    grid-template-columns: 1fr;
   }
 
-  .sidebar select,
-  .sidebar button,
-  .logout-btn {
+  .form-button {
+    grid-column: span 1;
+  }
+
+  input,
+  select,
+  button {
     width: 100%;
-  }
-
-  .toggle-btn {
-    width: 100%;
-  }
-
-  .analytics-card {
-    overflow-x: auto;
-  }
-
-  table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
   }
 
   .auth-card {
@@ -807,41 +786,8 @@ body.cyber .page-title {
   .auth-logo {
     font-size: 50px;
   }
-}
 
-/* SMALL PHONES */
-
-@media screen and (max-width: 480px) {
-
-  .page-title {
-    font-size: 1.8rem;
-  }
-
-  .card {
-    padding: 18px;
-  }
-
-  .card h2 {
-    font-size: 32px;
-  }
-
-  .card p {
-    font-size: 16px;
-  }
-
-  .profile-box h3 {
-    font-size: 18px;
-  }
-
-  .profile-box p {
-    font-size: 15px;
-  }
-
-  .sidebar {
-    padding: 10px;
-  }
-
-  .main-content {
-    padding: 10px;
+  .toggle-btn {
+    display: none;
   }
 }

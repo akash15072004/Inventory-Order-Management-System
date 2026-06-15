@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { saveAs } from "file-saver";
 import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 import api from "../services/api";
 
 function Orders() {
