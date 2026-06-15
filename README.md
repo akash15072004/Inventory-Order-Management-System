@@ -20,6 +20,24 @@ https://inventory-order-management-system1-41dk.onrender.com/
 
 https://inventory-order-management-system1-41dk.onrender.com/docs
 
+## 🐳 Docker Image
+
+Backend Docker image is available on Docker Hub:
+
+https://hub.docker.com/r/akash2413/inventory-backend
+
+Pull the image:
+
+```bash
+docker pull akash2413/inventory-backend:latest
+```
+
+Run the container:
+
+```bash
+docker run -d -p 8000:8000 akash2413/inventory-backend:latest
+```
+
 ---
 
 # 📋 Project Overview
