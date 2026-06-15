@@ -6,95 +6,95 @@ Built with a modern React frontend, FastAPI backend, PostgreSQL/SQLite database 
 
 ---
 
-## 🚀 Live Demo
+# 🚀 Live Demo
 
-### Frontend (Vercel)
+## Frontend (Vercel)
 
 https://inventory-order-management-system-gold.vercel.app
 
-### Backend API (Railway)
+## Backend API (Render)
 
-https://inventory-order-management-system-production-458d.up.railway.app
+https://inventory-order-management-system1-41dk.onrender.com/
 
-### API Documentation (Swagger)
+## API Documentation (Swagger)
 
-https://inventory-order-management-system-production-458d.up.railway.app/docs
+https://inventory-order-management-system1-41dk.onrender.com/docs
 
 ---
 
-## 📋 Project Overview
+# 📋 Project Overview
 
 The Inventory & Order Management System enables businesses to efficiently manage:
 
-- Product Inventory
-- Customer Records
-- Order Processing
-- Inventory Tracking
-- Business Analytics
-- Reporting & Exporting
+* Product Inventory
+* Customer Records
+* Order Processing
+* Inventory Tracking
+* Business Analytics
+* Reporting & Exporting
 
 The system automatically updates stock levels when orders are created and provides insights through an analytics dashboard.
 
 ---
 
-## ✨ Key Features
+# ✨ Key Features
 
-### 🔐 Authentication & Authorization
+## 🔐 Authentication & Authorization
 
-- User Registration
-- User Login
-- Session Management
-- Protected Routes
+* User Registration
+* User Login
+* Session Management
+* Protected Routes
 
-### 📦 Product Management
+## 📦 Product Management
 
-- Create Products
-- Update Products
-- Delete Products
-- Inventory Tracking
-- Product Search
+* Create Products
+* Update Products
+* Delete Products
+* Inventory Tracking
+* Product Search
 
-### 👥 Customer Management
+## 👥 Customer Management
 
-- Create Customers
-- Update Customers
-- Delete Customers
-- Customer Search
+* Create Customers
+* Update Customers
+* Delete Customers
+* Customer Search
 
-### 🛒 Order Management
+## 🛒 Order Management
 
-- Create Orders
-- Delete Orders
-- Automatic Stock Deduction
-- Order Validation
-- Order Tracking
+* Create Orders
+* Delete Orders
+* Automatic Stock Deduction
+* Order Validation
+* Order Tracking
 
-### 📊 Analytics Dashboard
+## 📊 Analytics Dashboard
 
-- Total Products
-- Total Customers
-- Total Orders
-- Low Stock Alerts
-- Recent Orders
-- Business Analytics Charts
+* Total Products
+* Total Customers
+* Total Orders
+* Low Stock Alerts
+* Recent Orders
+* Business Analytics Charts
 
-### 📑 Reporting
+## 📑 Reporting
 
-- Export Orders to CSV
-- Generate PDF Reports
-- Download Business Records
+* Export Orders to CSV
+* Generate PDF Reports
+* Download Business Records
 
-### 🎨 User Experience
+## 🎨 User Experience
 
-- Professional Admin Dashboard
-- Multiple Theme Support
-- Responsive Design
-- Mobile Friendly Interface
-- Interactive Charts
+* Professional Admin Dashboard
+* Multiple Theme Support
+* Responsive Design
+* Mobile Friendly Interface
+* Interactive Charts
 
 ---
 
-## 🏗️ System Architecture
+# 🏗️ System Architecture
 
 ```text
 ┌────────────────────────────┐
@@ -105,7 +105,7 @@ The system automatically updates stock levels when orders are created and provid
               ▼
 ┌────────────────────────────┐
 │      FastAPI Backend       │
-│         (Railway)          │
+│         (Render)           │
 └─────────────┬──────────────┘
               │
               ▼
@@ -116,68 +116,49 @@ The system automatically updates stock levels when orders are created and provid
 
 ---
 
-## 🛠️ Technology Stack
+# 🛠️ Technology Stack
 
-### Frontend
+## Frontend
 
-- React.js
-- React Router DOM
-- Axios
-- Recharts
-- jsPDF
-- File Saver
+* React.js
+* React Router DOM
+* Axios
+* Recharts
+* jsPDF
+* File Saver
 
-### Backend
+## Backend
 
-- FastAPI
-- SQLAlchemy
-- Pydantic
-- Uvicorn
+* FastAPI
+* SQLAlchemy
+* Pydantic
+* Uvicorn
 
-### Database
+## Database
 
-- PostgreSQL
-- SQLite
+* PostgreSQL
+* SQLite
 
-### DevOps & Deployment
+## DevOps & Deployment
 
-- Docker
-- Docker Compose
-- Railway
-- Vercel
-- GitHub
+* Docker
+* Docker Compose
+* Render
+* Vercel
+* GitHub
 
 ---
 
-## 📂 Project Structure
+# 📂 Project Structure
 
 ```text
 Inventory-Order-Management-System
 │
 ├── backend
-│   │
 │   ├── app
-│   │   │
 │   │   ├── models
-│   │   │   ├── customer.py
-│   │   │   ├── product.py
-│   │   │   ├── order.py
-│   │   │   ├── order_item.py
-│   │   │   └── user.py
-│   │   │
 │   │   ├── routers
-│   │   │   ├── auth_router.py
-│   │   │   ├── customer_router.py
-│   │   │   ├── dashboard_router.py
-│   │   │   ├── order_router.py
-│   │   │   └── product_router.py
-│   │   │
 │   │   ├── schemas
-│   │   │   ├── customer.py
-│   │   │   ├── product.py
-│   │   │   ├── order.py
-│   │   │   └── user.py
-│   │   │
 │   │   ├── database.py
 │   │   └── main.py
 │   │
@@ -186,22 +167,10 @@ Inventory-Order-Management-System
 │   └── .env.example
 │
 ├── frontend
-│   │
 │   ├── src
-│   │   │
 │   │   ├── pages
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── Products.jsx
-│   │   │   ├── Customers.jsx
-│   │   │   ├── Orders.jsx
-│   │   │   ├── Login.jsx
-│   │   │   └── Signup.jsx
-│   │   │
 │   │   ├── services
-│   │   │   └── api.js
-│   │   │
 │   │   ├── App.jsx
-│   │   ├── App.css
 │   │   └── main.jsx
 │   │
 │   ├── package.json
@@ -214,9 +183,9 @@ Inventory-Order-Management-System
 
 ---
 
-## ⚙️ Local Setup
+# ⚙️ Local Setup
 
-### Clone Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/akash15072004/Inventory-Order-Management-System.git
@@ -224,14 +193,14 @@ git clone https://github.com/akash15072004/Inventory-Order-Management-System.git
 cd Inventory-Order-Management-System
 ```
 
-### Backend Setup
+## Backend Setup
 
 ```bash
 cd backend
 
 pip install -r requirements.txt
 
-uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload
 ```
 
 Backend:
@@ -246,9 +215,7 @@ Swagger Docs:
 http://localhost:8000/docs
 ```
 
----
-
-### Frontend Setup
+## Frontend Setup
 
 ```bash
 cd frontend
@@ -266,15 +233,15 @@ http://localhost:5173
 
 ---
 
-## 🐳 Docker Setup
+# 🐳 Docker Setup
 
-### Build & Run Containers
+## Build & Run Containers
 
 ```bash
 docker compose up --build
 ```
 
-### Stop Containers
+## Stop Containers
 
 ```bash
 docker compose down
@@ -282,16 +249,16 @@ docker compose down
 
 ---
 
-## 📡 API Endpoints
+# 📡 API Endpoints
 
-### Authentication
+## Authentication
 
 ```http
 POST /auth/signup
 POST /auth/login
 ```
 
-### Products
+## Products
 
 ```http
 GET    /products
@@ -300,7 +267,7 @@ PUT    /products/{id}
 DELETE /products/{id}
 ```
 
-### Customers
+## Customers
 
 ```http
 GET    /customers
@@ -309,7 +276,7 @@ PUT    /customers/{id}
 DELETE /customers/{id}
 ```
 
-### Orders
+## Orders
 
 ```http
 GET    /orders
@@ -317,7 +284,7 @@ POST   /orders
 DELETE /orders/{id}
 ```
 
-### Dashboard
+## Dashboard
 
 ```http
 GET /dashboard
@@ -325,55 +292,31 @@ GET /dashboard
 
 ---
 
-## 📸 Screenshots
+# 📈 Future Enhancements
 
-Add screenshots of:
-
-- Login Page
-- Signup Page
-- Dashboard
-- Products Module
-- Customers Module
-- Orders Module
-
-Example:
-
-```text
-screenshots/
-├── login.png
-├── signup.png
-├── dashboard.png
-├── products.png
-├── customers.png
-└── orders.png
-```
+* JWT Authentication
+* Role-Based Access Control
+* Email Notifications
+* Sales Analytics
+* Inventory Alerts
+* Advanced Reporting
+* Multi-User Support
+* Cloud Database Integration
 
 ---
 
-## 📈 Future Enhancements
-
-- JWT Authentication
-- Role-Based Access Control
-- Email Notifications
-- Sales Analytics
-- Inventory Alerts
-- Advanced Reporting
-- Multi-User Support
-- Cloud Database Integration
-
----
-
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Akash Chaudhary**
 
 B.Tech Information Technology
 
-GitHub: https://github.com/akash15072004
+GitHub:
+https://github.com/akash15072004
 
 ---
 
-## 📄 License
+# 📄 License
 
 This project is developed for educational, learning, and technical assessment purposes.
 
@@ -381,15 +324,19 @@ This project is developed for educational, learning, and technical assessment pu
 
 ## ✅ Assignment Requirements Covered
 
-- React Frontend
-- FastAPI Backend
-- PostgreSQL Database Support
-- Docker Containerization
-- Docker Compose Setup
-- Authentication System
-- CRUD Operations
-- Inventory Tracking
-- Analytics Dashboard
-- Reporting Features
-- Cloud Deployment
-- Production Ready Architecture
+* React Frontend
+* FastAPI Backend
+* PostgreSQL Database Support
+* Docker Containerization
+* Docker Compose Setup
+* Authentication System
+* CRUD Operations
+* Inventory Tracking
+* Analytics Dashboard
+* Reporting Features
+* Responsive UI
+* PDF Invoice Generation
+* CSV Export Functionality
+* Cloud Deployment (Vercel + Render)
+* Production Ready Architecture
+
